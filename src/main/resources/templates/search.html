@@ -35,7 +35,17 @@
     </form>
 
     <hr />
+    <div th:if = "${jobs != null}">
 
+
+    <table th:each="job : ${jobs}" class="job-listing">
+        <tr th:each="mapItem : ${job}">
+            <td th:text="${mapItem.key}">Key</td>
+            <td th:text="${mapItem.value}">Value</td>
+        </tr>
+
+    </table>
+    </div>
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
 </div>
